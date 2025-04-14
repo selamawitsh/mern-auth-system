@@ -1,0 +1,41 @@
+.logo-img {
+    width: 7rem; /* equivalent to Tailwind's w-28 (112px) */
+  }
+  
+  .navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; 
+    position: absolute;
+    margin-top: 0;
+  }
+
+  .custom-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Tailwind's gap-2 is 8px */
+    border: 1px solid #6b7280; /* Tailwind's border-gray-500 */
+    border-radius: 9999px; /* Fully rounded like rounded-full */
+    padding: 0.5rem 1.5rem; /* py-2 = 8px, px-6 = 24px */
+    color: #1f2937; /* Tailwind's text-gray-800 */
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .custom-button:hover {
+    background-color: #f3f4f6; /* Tailwind's bg-gray-100 */
+  }
+
+  
+  @media (min-width: 640px) {
+    .logo-img {
+      width: 8rem; /* equivalent to Tailwind's sm:w-32 (128px) */
+    }
+
+    .navbar-container {
+        padding: 1.5rem 6rem; /* sm:p-6 = 24px, sm:px-24 = 96px horizontal padding */
+      }
+  }
+  

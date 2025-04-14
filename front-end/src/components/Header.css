@@ -1,0 +1,72 @@
+.profile-img {
+    width: 9rem;    /* Tailwind's w-36 = 144px */
+    height: 9rem;   /* Tailwind's h-36 = 144px */
+    border-radius: 9999px; /* rounded-full */
+    margin-bottom: 1.5rem;  /* mb-6 = 24px */
+  }
+  
+  .wave-icon {
+    width: 2rem; /* w-8 = 32px */
+    aspect-ratio: 1 / 1; /* aspect-square */
+  }
+  
+  .wave-icon {
+    width: 2rem; /* w-8 = 32px */
+    aspect-ratio: 1 / 1; /* aspect-square */
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem; /* mt-20 = 80px */
+    padding-left: 1rem; /* px-4 = 16px */
+    padding-right: 1rem;
+    text-align: center;
+    color: #1f2937; /* text-gray-800 */
+  }
+
+  .heading-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* gap-2 = 8px */
+    font-size: 1.25rem; /* text-xl = 20px */
+    font: medium;
+    margin-bottom: 1em;
+  }
+
+
+  .section-title {
+    font-size: 1.875rem; /* text-3xl = 30px */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 1rem; /* mb-4 = 16px */
+  }
+  
+  
+  .section-description {
+    margin-bottom: 2rem; /* mb-8 = 32px */
+    max-width: 28rem; /* max-w-md = 448px */
+  }
+  
+  .get-started-btn {
+    border: 1px solid #6b7280; /* border-gray-500 */
+    border-radius: 9999px; /* rounded-full */
+    padding: 0.5rem 2rem; /* py-2 = 8px, px-8 = 32px */
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #f3f4f6; /* bg-gray-100 */
+  }
+
+  
+  @media (min-width: 640px) {
+    .heading-with-icon {
+      font-size: 1.875rem; /* text-3xl = 30px */
+    }
+    .section-title {
+        font-size: 2.25rem; /* sm:text-4xl (assuming you meant text-4xl) = 36px */
+      }
+  }
