@@ -160,6 +160,8 @@ export const verifyEmail = async (req, res) => {
     }
 };
 
+
+
 //Check if user is authenticated
 export const isAuthenticated = async(req,res)=>{
     try {
@@ -168,7 +170,6 @@ export const isAuthenticated = async(req,res)=>{
         res.json({success:false, message:error.message})
     }
 }
-
 //send password reset Otp
 export const sendResetOtp = async (req,res)=> {
     const {email}= req.body;
@@ -204,7 +205,6 @@ export const sendResetOtp = async (req,res)=> {
     }
     
 }
-
 //reset user password
 export const resetPassword = async (req,res) => {
     const {email,otp,newPassword}=req.body;
