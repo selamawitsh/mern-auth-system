@@ -15,40 +15,81 @@ const Login = () => {
   const [email,setEmail]= useState("");
   const [password,setPassword]= useState("");
 
+  // const OnsubmitHandler = async (e) => {
+  //   try {
+  //     e.preventDefault();
+  //     axios.defaults.withCredentials=true;
+  //     if(state === 'Sign Up'){
+  //       const {data} =await axios.post(backendUrl + '/api/auth/register' ,
+  //         {name, email, password}
+  //        )
+
+  //        if(data.success){
+  //         setIsLoggedin(true)
+  //         navigate('/')
+  //        }else{
+  //         toast.error(data.message)
+  //        }
+  //     }else{
+  //       const {data} =await axios.post(backendUrl + '/api/auth/login' ,
+  //         {email, password}
+  //        )
+
+  //        if(data.success){
+  //         setIsLoggedin(true)
+  //         navigate('/')
+  //        }else{
+  //         toast.error(data.message)
+  //        }
+
+
+  //     }
+  //   } catch (error) {
+  //     toast.error(data.message)
+  //   }
+    
+  // }
   const OnsubmitHandler = async (e) => {
     try {
       e.preventDefault();
-      axios.defaults.withCredentials=true;
-      if(state === 'Sign Up'){
-        const {data} =await axios.post(backendUrl + '/api/auth/register' ,
-          {name, email, password}
-         )
-
-         if(data.success){
-          setIsLoggedin(true)
-          navigate('/')
-         }else{
-          toast.error(data.message)
-         }
-      }else{
-        const {data} =await axios.post(backendUrl + '/api/auth/login' ,
-          {email, password}
-         )
-
-         if(data.success){
-          setIsLoggedin(true)
-          navigate('/')
-         }else{
-          toast.error(data.message)
-         }
-
-
+      axios.defaults.withCredentials = true;
+  
+      if (state === 'Sign Up') {
+        const { data } = await axios.post(backendUrl + '/api/auth/register', {
+          name,
+          email,
+          password,
+        });
+  
+        console.log('Register Response:', data); // Log the response for debugging
+  
+        if (data.success) {
+          setIsLoggedin(true);
+          navigate('/');
+        } else {
+          toast.error(data.message);
+        }
+      } else {
+        const { data } = await axios.post(backendUrl + '/api/auth/login', {
+          email,
+          password,
+        });
+  
+        console.log('Login Response:', data); // Log the response for debugging
+  
+        if (data.success) {
+          setIsLoggedin(true);
+          navigate('/');
+        } else {
+          toast.error(data.message);
+        }
       }
     } catch (error) {
-      toast.error(data.message)
+      console.error(error);  // Log the error for debugging
+      toast.error("An error occurred during login or registration");
     }
-    
-  }
+  };
+  
 
   return (
     <div className="login-container">
@@ -56,7 +97,7 @@ const Login = () => {
     <div className="form-container">
       <h2 className="form-title">{state === 'Sign Up' ? 'Create Account' : 'Login'}</h2>
       <p className="form-subtitle">{state === 'Sign Up' ? 'Create your account' : 'Log in to your account'}</p>
-      <form onSubmit={onSubmitHandler}>
+      <form onSubmit={OnsubmitHandler}>
         {state==='Sign Up' && (
           <div className="input-container">
           <img src={assets.person_icon} alt="" className="icon" />
